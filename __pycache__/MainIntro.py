@@ -21,20 +21,20 @@ chosen_direction = input("What direction should you go first?\n"
 
 if chosen_direction == "1":
                print("You set sail to the North!\n")
-               from NorthScene import north_scene
-               north_scene()
+               from NorthScene import north
+               north()
 if chosen_direction == "2":
                print("You set sail to the East!\n")
-               from EastScene import east_scene
-               east_scene()
+               from EastScene import east
+               east()
 elif chosen_direction == "3":
                 print("You set sail to the South!\n")
-                from SouthScene import south_sceneA
-                south_sceneA()
+                from SouthScene import south
+                south()
 elif chosen_direction == "4":
                 print("You set sail to the West!\n")
-                from WestScene import west_sceneA
-                west_sceneA()
+                from WestScene import west
+                west()
 else:
   print("Invalid choice. Please try again.")
 chosen_direction

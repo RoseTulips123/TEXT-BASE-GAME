@@ -1,6 +1,6 @@
 inventory = []
 
-def west_sceneA():      
+def west():      
  print("You decide that your final adventure will be the western island (Or whatever the user ends on), located directly west of your home," 
  " after days of sailing you reach the island, you dock your ship and step onto the sandy desert, you see nothing but sand dunes and cacti" 
  " as far as the eye can see, the sun is blazing hot, you feel thirsty by just looking at the dry desert, you scan the desert for any signs of life," 
@@ -150,8 +150,10 @@ if choice == "47":
 if choice == "48":
        sundial_path()
 
-from OutroScene import outro_scene;
-outro_scene()
+west
+
+from OutroScene import outro;
+outro()
 
 
 

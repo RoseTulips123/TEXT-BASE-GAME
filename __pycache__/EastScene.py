@@ -3,7 +3,7 @@ from index import south_scene, west_scene
 
 inventory = []
 
-def east_scene():
+def east():
        print("Upon arriving at the island directly East of your home, you immediately see beautiful mountainous terrain") 
        print("and colorful trees, you see two paths ahead of you, one leading into a beautiful forest, and one leading")
        print("towards a treehouse village built into the mountainside, which path do you take?\n") 
@@ -95,7 +95,7 @@ def gift_path():
        inventory.append("Cape")
        inventory.append("Yellow gemstone")
 
-east_scene()       
+east()       
 
 directionpath3A = input("What direction should you go to next? \n"
                        "20. South (Treasure of Spring)\n"
@@ -103,12 +103,12 @@ directionpath3A = input("What direction should you go to next? \n"
        
 if directionpath3A == "20":
         print("You set sail to the South!\n")
-        from SouthScene import south_sceneA
-        south_sceneA()        
+        from SouthScene import south
+        south()        
 elif directionpath3A == "21": 
         print ("You sail to the West!")  
-        from WestScene import west_sceneA
-        west_sceneA()       
+        from WestScene import west
+        west()       
 else:
         print("Invalid choice. Please try again.")
         directionpath3A()

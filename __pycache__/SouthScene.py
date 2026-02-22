@@ -1,6 +1,6 @@
 inventory = []
 
-def south_sceneA():
+def south():
        print("You decide that your next adventure will be the southern island, located directly south of your home, after a few")
        print("days of sailing you reach the island, you dock you ship and step onto the beautiful, sandy beach, you see palm trees")
        print("swaying in the warm breeze, beatiful lush greenery and exotic plants and animals you've never seen before, its like")
@@ -136,7 +136,7 @@ def right_path():
        inventory.append("Armor")
        inventory.append("Pink gemstone")
 
-south_sceneA()
+south()
 
 print("Congratulations! You have found the Treasure of Spring!\n")
 print("Would you like to go to the final direction?")
@@ -147,8 +147,8 @@ choice = input( " 33. Yes"
 import sys
 def choice_path10():
    if choice ==  "33":
-    from WestScene import west_sceneA
-    west_sceneA()
+    from WestScene import west
+    west()
    if choice == "34":
       print("Really? After all this work you dont want to finish your quest? Oh well, home you go.")
       print("You have failed your quest.\n")

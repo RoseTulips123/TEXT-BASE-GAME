@@ -1,7 +1,7 @@
 
 inventory = []
 
-def north_scene():
+def north():
        print("after days of sailing you reach an island directly North of your home, you dock your ship,")
 print("cold, arctic winds hit you face, good thing you prepared for this, you walk inland and see a huge")
 print("mountain in the distance, you start to make your way to the mountain as big as mount everest,")
@@ -13,16 +13,16 @@ print("on the ground, you are very hungry from your voyage," "\n")
 choice0 = input("Do you eat the meat?\n"
                "5. Eat the meat\n"
                "6. Move on into the cave\n")
-       
-def meat_scene():
+
+def Meat_scene():
         print("You go to pick up the meat, as you do a huge polar bear jumps out from the shadows and attacks you, you try")
         print("to fight it off but it overpowers you.\n")
         print("You have failed your quest.")
-        return north_scene()
+        return north()
 
 if choice0 == "5":
-       meat_scene
- 
+       Meat_scene()
+
 def ignore_scene():
         print("You ignore the meat and walk deeper into the cave, after a few minutes you see a light in the distance, you")
         print("walk towards it and find a large chamber with the floor frozen over, you see a large ice pedestal in the center")
@@ -59,7 +59,7 @@ def Lookaround_scene():
       inventory.append("Sheild")
       inventory.append("Blue gemstone")
 
-north_scene()
+north()
 
 directionpath1 = input("What direction should you go to next? \n")
 print("9. East (Treasure of Autumn)\n"
@@ -68,16 +68,16 @@ print("9. East (Treasure of Autumn)\n"
 
 if directionpath1 == "9":
        print("You set sail to the East!\n")
-       from EastScene import east_scene
-       east_scene()
+       from EastScene import east
+       east()
 elif directionpath1 == "10":
        print("You set sail to the South!\n")
-       from SouthScene import south_scene
-       south_scene()
+       from SouthScene import south
+       south()
 elif directionpath1 == "11":
        print("You set sail to the West!\n")
-       from WestScene import west_scene
-       west_scene()
+       from WestScene import west
+       west()
 else:
        print("Invalid choice. Please try again.\n")
        directionpath1()    
