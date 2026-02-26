@@ -1,14 +1,14 @@
-
+import StateCode
 inventory = []
 
 def north():
-       print("after days of sailing you reach an island directly North of your home, you dock your ship,")
-print("cold, arctic winds hit you face, good thing you prepared for this, you walk inland and see a huge")
-print("mountain in the distance, you start to make your way to the mountain as big as mount everest,")
-print("after hours of hiking you reach the base of the mountain, you see a cave entrance, you brush off")
-print("some snow from a fallen boulder next to it and see a blue gemstone engraved in the rock, you enter")
-print("the cave, its dark and cold, you walk deeper into the cave until you see a peice of meat laying")
-print("on the ground, you are very hungry from your voyage," "\n")
+        print("after days of sailing you reach an island directly North of your home, you dock your ship,")
+        print("cold, arctic winds hit you face, good thing you prepared for this, you walk inland and see a huge")
+        print("mountain in the distance, you start to make your way to the mountain as big as mount everest,")
+        print("after hours of hiking you reach the base of the mountain, you see a cave entrance, you brush off")
+        print("some snow from a fallen boulder next to it and see a blue gemstone engraved in the rock, you enter")
+        print("the cave, its dark and cold, you walk deeper into the cave until you see a peice of meat laying")
+        print("on the ground, you are very hungry from your voyage," "\n")
 
 choice0 = input("Do you eat the meat?\n"
                "5. Eat the meat\n"
@@ -16,9 +16,9 @@ choice0 = input("Do you eat the meat?\n"
 
 def Meat_scene():
         print("You go to pick up the meat, as you do a huge polar bear jumps out from the shadows and attacks you, you try")
-        print("to fight it off but it overpowers you.\n")
-        print("You have failed your quest.")
-        return north()
+        print("to fight it off but you end up with scratches and bruises, yet you live to see another day.\n")
+        StateCode.Health -= 50
+        print("You have " + str(StateCode.Health) + " health left.\n")
 
 if choice0 == "5":
        Meat_scene()
@@ -48,23 +48,23 @@ def frozenfloor_scene():
         print("You make your way across the frozen floor, as you near the pedestal you hear a cracking sound, before you can")
         print("react the ice breaks beneath you, and you fall into freezing water below, the freezing temperature of the water")
         print("gives you hypothermia and you drown.\n")
-        print("You have failed your quest.\n")
-        choice_path1()
+        StateCode.Lives -= 1
+        print("You have " + str(StateCode.Lives) + " lives left.\n")
 
 def Lookaround_scene():
-      print("You observe the ice closely and see that the floor is very thin in some spots, you carefully make your way across")
-      print("the chamber avoiding the thin ice, you reach the pedestal and open the chest, inside you find gold, diamonds,")
-      print("a sheild, and a Blue gemstone!\n")
-      print("Congratulations! You have found the Treasure of Winter!\n")
-      inventory.append("Sheild")
-      inventory.append("Blue gemstone")
+        print("You observe the ice closely and see that the floor is very thin in some spots, you carefully make your way across")
+        print("the chamber avoiding the thin ice, you reach the pedestal and open the chest, inside you find gold, diamonds,")
+        print("a sheild, and a Blue gemstone!\n")
+        print("Congratulations! You have found the Treasure of Winter!\n")
+        inventory.append("Sheild")
+        inventory.append("Blue gemstone")
 
 north()
 
-directionpath1 = input("What direction should you go to next? \n")
-print("9. East (Treasure of Autumn)\n"
-      "10. South (Treasure of Spring)\n"
-      "11. West  (Treasure of Summer)\n")
+directionpath1 = input("What direction should you go to next?"
+                       "9. East (Treasure of Autumn)"
+                       "10. South (Treasure of Spring)"
+                       "11. West (Treasure of Summer)\n")
 
 if directionpath1 == "9":
        print("You set sail to the East!\n")
