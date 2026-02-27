@@ -50,6 +50,7 @@ def frozenfloor_scene():
         print("gives you hypothermia and you drown.\n")
         StateCode.Lives -= 1
         print("You have " + str(StateCode.Lives) + " lives left.\n")
+        choice_path1()
 
 def Lookaround_scene():
         print("You observe the ice closely and see that the floor is very thin in some spots, you carefully make your way across")

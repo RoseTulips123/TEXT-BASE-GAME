@@ -1,3 +1,4 @@
+import StateCode
 inventory = []
 
 def south():
@@ -15,7 +16,8 @@ def investigate_path():
         "outside your shelter, as you do, you are greeted by an unwelcomed guest of black tall creatures with glowing"
         "purple eyes, you are stuck in a trance-like state, unable to move, you can only watch as the the figures purple"
         "eyes get bigger and bigger, getting closer and closer, until you cant see no more.")
-        print("You have failed your quest.\n")
+        StateCode.Lives -= 1
+        print("You have " + str(StateCode.Lives) + " lives left.\n")
         choice_path5()
 
 def stay_path():
@@ -23,20 +25,18 @@ def stay_path():
         "look outside your shelter, you see nothing but the night and stars, you go back to sleep, and awake to a beautiful sunny morning, you decide"
         "to explore more of the island, as you walk deeper into the island, you name some of the exotic plants and animals, and jot them down in your"
         "journal, after a few hours of exploring you reach a beautiful waterfall, and the stream flowing from it, you drink some out of the stream and"
-        "feel refreshed, you see a cave entrance behind the waterfall, do you enter the cave or rest by the waterfall.")
+        "feel refreshed, you see a cave entrance behind the waterfall.")
+        choice = input("24. Enter the cave\n"
+                       "25. Rest by the waterfall\n")
 
 def choice_path5():
-       if choice == "22":
+       if choice == "24":
         return investigate_path()
-if choice == "23":
-       stay_path()
-        
-else:
-       print("Invalid choice. Please try again.")
-       choice_path5()
-
-choice = input("24. Enter the cave\n"
-               "25. Rest by the waterfall\n")
+       elif choice == "25":
+              return stay_path()
+       else:
+        print("Invalid choice. Please try again.")
+        choice_path5()
 
 def choice_path6():
        if choice == "24":
@@ -47,21 +47,24 @@ def choice_path6():
               print("Invalid choice. Please try again.")
               choice_path6()
 
+
+def cave_path():
+        print("You are have heard stories of hidden treasures in caves behind waterfalls, so you decide to enter the cave, as you step inside bats"
+              "fly past you, the cave is dark and damp, you walk deeper into the cave, after a few minutes you reach a large chamber with walls"
+              "covered in colorful, glowing crystals, in the center you see a large glowing crystal with a treasure map inside it, you brought some tools"
+              "with you for your journey, witch tool should you use to break the crystal?")
+        choice_path7()
+
 def rest_path():
         print("Exhausted from your exploration and haven finnaly a drink of the freshest water in your life, you lay down in a bed of flowers and gase up"
              " into the beautiful sky, full of colorful birds soaring through the air, you close your eyes, and fall asleep, you are awakend by a loud"
              " bird-like sound behind you, you turn around and see a huge bird in front of you, in its beak is your backpack! You try to snatch it from,"
              " its beak, but it flys off, you quickly run after it, it leads you into uncharted territory you've never discovered, you keep running"
              " but then, you feel yourself trip, before you can catch yourself, you fall off a very tall slope, you hit the ground with a hard and"
-             "brutal thud.")
-        print("You have failed you quest.")
-        choice_path6()
-
-def cave_path():
-        print("You are have heard stories of hidden treasures in caves behind waterfalls, so you decide to enter the cave, as you step inside bats"
-        "fly past you, the cave is dark and damp, you walk deeper into the cave, after a few minutes you reach a large chamber with walls"
-        "covered in colorful, glowing crystals, in the center you see a large glowing crystal with a treasure map inside it, you brought some tools"
-        "with you for your journey, witch tool should you use to break the crystal?")
+             "brutal thud, you are now very injured.")
+StateCode.Health -= 50
+print("You have " + str(StateCode.Health) + " health left.\n")
+cave_path()
 
 def choice_path7():
        choice = input("26. Hammer\n"
@@ -71,14 +74,16 @@ def choice_path7():
 if choice == "28":
         print("You use the pickaxe to try and break the crystal, you strike it a little too hard, the crystal breaks in half, and so does the map"
               "inside, you are left with nothing but shattered glass and torn paper.")
-        print("You have failed your quest.\n")
+        StateCode.Lives -= 1
+        print("You have " + str(StateCode.Lives) + " lives left.\n")
         choice_path7()
 
 if choice == "26":
         print("You use the hammer to try and break the crystal, you strike it with all your might, the crystal shatters into a million pieces, the" 
-        "shards fly everywhere, one sharp shard stabs you in the chest, you fall to the ground, helpless, as you die of loss of blood.")
-        print("You have failed your quest.\n")
-        choice_path6()
+        "shards fly everywhere, one sharp shard stabs you in the chest, you fall to the ground, you are in much pain, but you must go on.")
+StateCode.Health -= 45
+print("You have " + str(StateCode.Health) + " health left.\n")
+choice_path7()
 
 if choice == "27":
         print("You carefully use the chisel to break the crystal, after a few hours of careful work, you manage to break the crystal without damaging"
@@ -87,47 +92,49 @@ if choice == "27":
          "you see an entrance of an underground tunnel, you enter the tunnel, and find what it looks like a maze! You navigate through the maze using"
          "the direction on the back of the map, you eventually reach a room at the end of the maze, with three paths leading towards the left, right,"
          "and middle, which path do you take.")
-       
-choice = input("28. Left path\n"
-               "29. Middle path\n"
-               "30. Right path\n")
+        
+def choice_path8():      
+        choice = input("28. Left path\n"
+                       "29. Middle path\n"
+                       "30. Right path\n")
 
-def choice_path8():
-       if choice == "28":
-              return left_path()
-       elif choice == "29":
-              return middle_path()
-       elif choice == "30":
-              return right_path()
-       else:
-              print("Invalid choice. Please try again.")
+        if choice == "28":
+              left_path()
+        elif choice == "29":
+              middle_path()
+        elif choice == "30":
+              right_path()
+        else:
+              print("Invalid choice. Please try again.\n")
               choice_path8()
 
 def left_path():
-        print("You take the left path, after a few minutes of walking you reach a dead end, as you turn around to go back, you trigger a hidden trap,"
-              " the floor opens beneath you, and you fall into a pit of spikes.")
-        print("You have failed your quest.\n")
+        print("You take the left path, after a few minutes of walking you reach a dead end, as you turn around to go back, you trigger a hidden trap."
+              " A poison arrow hits you in the shoulder, but you manage to pull it out and loose only a little health.")
+        StateCode.Health -= 15
+        print("You have " + str(StateCode.Health) + " health left.\n")
         choice_path8()
 
 def middle_path():
         print("You take the middle path, as it seems most convincing, you walk for a few minutes and at the end of the path you see a lever on the wall,"
               " do you pull the lever or go back?\n")
-       
-choice = input("31. Pull the lever\n"
-               "32. Go back\n")
-
+        
 def choice_path9():
+       choice = input("31. Pull the lever\n"
+                      "32. Go back\n")
+
        if choice == "31":
               return lever_path()
        elif choice == "32":
-              return middle_path()
+              return choice_path8()
        else:
               print("Invalid choice. Please try again.\n")
-              choice_path9()
+              choice_path9()       
 
 def lever_path():
         print("You pull the lever, you hear a rumbling sound, the ceiling opens up then a large anvil falls from above, crushing you instantly.")
-        print("You have failed your quest.\n")
+        StateCode.Lives -= 1
+        print("You have " + str(StateCode.Lives) + " lives left.\n")
         choice_path9()
 
 def right_path():

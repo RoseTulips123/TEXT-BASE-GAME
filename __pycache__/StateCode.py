@@ -1,6 +1,10 @@
 Lives = 3
 Health = 100
 
+def State():
+       global Lives
+       global Health
+
 def Game_over(Current_lives):
        if Current_lives == 0:
               print("You have failed your quest.\n")

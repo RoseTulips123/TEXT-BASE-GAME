@@ -1,3 +1,4 @@
+import StateCode
 inventory = []
 
 def west():      
@@ -48,37 +49,41 @@ def choice_path12():
               choice_path12()
 
 def camel_path():
-        print("Suddenly, a bunch of camels came out of a compartment and attacked you, luckily you brung some weapons with you, you attack them, they run"
-              " off into a secret room, it closes behind them.\n")
+        print("Suddenly, a bunch of camels came out of a compartment and attacked you. you are injured but luckily you brung some weapons with you. You" \
+              "attack them, they run off into a secret room, it closes behind them.\n")
+        StateCode.Health -= 25
+        print("You have " + str(StateCode.Health) + " health left.\n")
         sundial_path()
 
 def desertwell_path():
         print("Suddendly, the temple starts filling with water, you try to break the doors to get out,"
         " but they are too strong and thick, you drown.\n")
-        print("You have failed your quest.\n")
+        StateCode.Lives -= 1
+        print("You have " + str(StateCode.Lives) + " lives left.\n")
         choice_path12()
 
 def sundial_path():
         print("Suddenly a secret door opens, you enter and are met with a straight path leading directly to another door, you feel suspicous of this, do"
               " you walk straight to the door, or investigate first?\n")
-       
-choice = input("1. walk straight to the door\n"
-                " 2. investigate \n")
 
 def choice_path13():
-       if choice == "41":
+        choice = input("41. walk straight to the door\n"
+                       "42. investigate \n")
+       
+        if choice == "41":
               return dumb_path()
-       elif choice == "42":
-              return smart_path
-       else:
+        elif choice == "42":
+              return smart_path()
+        else:
               print("Invalid choice. Please try again.\n")
-              choice_path13()
+              choice_path13()      
 
 def dumb_path():
         print("you decide that there would be no harm in walking straight to the door, you do so while thinking of what could be in that treasure chest,"
         " you are intrupted mid-thought, when you trip and fall over something, its a trip-wire, the door on the other side of you closes, and lava starts"
         " pouring into the room, you die in the pool of lava.\n")
-        print("You have failed your quest.\n")
+        StateCode.Lives -= 1
+        print("You have " + str(StateCode.Lives) + " lives left.\n")
         choice_path13()
 
 def smart_path():
@@ -88,11 +93,11 @@ def smart_path():
         " test, you will be granted what you most desire, below it reads, When the door with no hinges finally opens, what is the traveler said"
         " to discover?\n")
 
-choice = input(" 43. The shell\n"
-               " 44. The egg\n"
-               " 45. The yolk\n")
-
 def choice_path14():
+       choice = input("43. The shell\n"
+                      "44. The egg\n"
+                      "45. The yolk\n")
+       
        if choice == "43":
               return shell_path()
        elif choice == "44":
@@ -101,16 +106,20 @@ def choice_path14():
               return yolk_path()
        else:
               print("Invalid choice. Please try again.\n")
-              choice_path14
+              choice_path14()
        
 def shell_path():
-        print("Suddenly treasure chests starts falling from above and crush you\n")
-        print("You have failed your quest.\n")
-        choice_path14()
+        print("Suddenly treasure chests starts falling from above. You manage to dodge some, but one lands on your leg, the pain is intense but you carry"
+              "on.\n")
+        StateCode.Health -= 25
+        print("You have " + str(StateCode.Health) + " health left.\n")
+        yolk_path()
 
 def egg_path():
-        print("Suddenly huge canons are lifted up, and treasure chests filled with treasure shoot out and hit you\n")
-        print("You have failed your quest.\n")
+        print("Suddenly huge canons are lifted up, and treasure chests filled with treasure shoot out and come flying towards you. This time you"
+              " are unable to dodge them and are hit by several. You do not survive.\n")
+        StateCode.Lives -= 1
+        print("You have " + str(StateCode.Lives) + " lives left.\n")
         choice_path14()
 
 def yolk_path():
@@ -142,7 +151,8 @@ print(" 46. A camel\n"
 if choice == "46":
         print("Suddenly, a bunch of camels came out of a compartment and attacks you, you gave all your weapons to the arab wonderers, you have no defence"
         " for yourself, you die from camels")
-        print("You have failed your quest.")
+        StateCode.Lives -= 1
+        print("You have " + str(StateCode.Lives) + " lives left.\n")
         choice_path11()
 
 if choice == "47":
@@ -151,7 +161,7 @@ if choice == "47":
 if choice == "48":
        sundial_path()
 
-west
+west()
 
 from OutroScene import outro;
 outro()
