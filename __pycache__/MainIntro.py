@@ -1,11 +1,7 @@
+from random import choice
 
 
-def introA():
- 
- 
- intro()    
-
-def intro():    
+def introA():  
     print("⚔︎ Treasure Quest ⚔︎\n")
     print("You are a treasure hunter who is on a quest to find hidden treasures left by four ancient kings, its" 
     "been hidden for centeries and no one has been able to find it, but you wont give up! The only clue the ancient kings" 
@@ -17,28 +13,35 @@ def intro():
     "vase back then decide to set out on your quest to find the hidden treasures\n"
     "Type in the number to the choice you want to make.\n")
 
-chosen_direction = input("What direction should you go first?\n"
-                         "1. North (Treasure of Winter)\n"
-                         "2. East  (Treasure of Autumn)\n"
-                         "3. South (Treasure of Spring)\n"
-                         "4. West  (Treasure of Summer)\n")
+def chosen_direction():
+     choice = input(
+        "What direction should you go first?\n"
+        "1. North (Treasure of Winter)\n"
+        "2. East  (Treasure of Autumn)\n"
+        "3. South (Treasure of Spring)\n"
+        "4. West  (Treasure of Summer)\n\n"
+     )
 
-if chosen_direction == "1":
-               print("You set sail to the North!\n")
-               from NorthScene import north
-               north()
-if chosen_direction == "2":
-               print("You set sail to the East!\n")
-               from EastScene import east
-               east()
-elif chosen_direction == "3":
-                print("You set sail to the South!\n")
-                from SouthScene import south
-                south()
-elif chosen_direction == "4":
-                print("You set sail to the West!\n")
-                from WestScene import west
-                west()
+
+if choice == "1":
+         print("You set sail to the North!\n")
+         from NorthScene import north
+         north()
+elif choice == "2":
+         print("You set sail to the East!\n")
+         from EastScene import east
+         east()
+elif choice == "3":
+         print("You set sail to the South!\n")
+         from SouthScene import south
+         south()
+elif choice == "4":
+         print("You set sail to the West!\n")
+         from WestScene import west
+         west()
 else:
-    print("Invalid choice. Please try again.")
+         print("Invalid choice. Please try again.\n")
 
+introA()
+
+chosen_direction()

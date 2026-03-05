@@ -24,4 +24,6 @@ def Lose_HP(Current_HP, Current_Lives, Amount, Max_HP):
               print("HP:", Current_HP, "Lives:", Current_Lives, "\n")
               return Current_HP, Current_Lives, False
        
+       
+       
     
