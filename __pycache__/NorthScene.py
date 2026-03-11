@@ -4,16 +4,12 @@ import StateCode
 
 inventory = []
 
-
 def _check_game_over():
-    """Exit the game if the player has no lives remaining."""
     if StateCode.Game_over(StateCode.Lives):
         sys.exit()
 
 
 def north():
-    """Entry point for the North scene."""
-
     print(
         "After days of sailing you reach an island directly north of your home. You dock your ship, and cold arctic "
         "winds hit your face. Good thing you prepared for this. You walk inland and see a huge mountain in the distance; "
@@ -119,3 +115,5 @@ def directionpath1():
             break
         else:
             print("Invalid choice. Please try again.\n")
+
+north()
