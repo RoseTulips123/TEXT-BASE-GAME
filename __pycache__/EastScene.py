@@ -5,8 +5,8 @@ inventory = []
 
 def east():
     print(
-    "Upon arriving at the island directly East of your home, you immediately see beautiful mountainous" \
-    "terrain and colorful trees. You see two paths ahead of you: one leading into a beautiful forest, and one" \
+    "Upon arriving at the island directly East of your home, you immediately see beautiful mountainous " \
+    "terrain and colorful trees. You see two paths ahead of you: one leading into a beautiful forest, and one " \
     "leading towards a treehouse village built into the mountainside.\n"
     )
 
@@ -29,9 +29,9 @@ def east():
 
 def forest_path():
     print(
-    "You enter the forest; the trees are tall and the leaves are a beautiful array of reds, oranges, and" \
-    "yellows. As you walk deeper into the forest you see a clearing ahead, and in the middle of the clearing you" \
-    "see aninjured rare fox that's colored gold and red. Do you help the fox, ignore it, or take its fur for profit?\n"
+    "You enter the forest; the trees are tall and the leaves are a beautiful array of reds, oranges, and " \
+    "yellows. As you walk deeper into the forest you see a clearing ahead, and in the middle of the clearing you " \
+    "see an injured rare fox that's colored gold and red. Do you help the fox, ignore it, or take its fur for profit?\n"
     )
 
     while True:
@@ -77,9 +77,11 @@ def ignore_fox():
           "hostile natives ambush you. They overpower you and take all your supplies, leaving you stranded in the forest with"
           "no food or water. After days of wandering you give up hope and succumb to starvation.\n"
     )
-        
+
     StateCode.Lives -= 1
     print("You have " + str(StateCode.Lives) + " lives left.\n")
+
+    directionpath3A()
 
 
 def take_fur():
@@ -92,58 +94,18 @@ def take_fur():
     StateCode.Lives -= 1
     print("You have " + str(StateCode.Lives) + " lives left.\n")
 
+    directionpath3A()
+
 
 def treehouse_path():
-       print("You decide that going to the treehouse village might have a better chance of finding the treasure. You make your"
-         "way toward the village. As you get closer you see that the village is bustling with activity; people are going"
-         "about their daily lives. You approach one of the villagers; they look at you like they've seen an alien. How"
-         "should you talk to them?\n"
-    )
-
-def communication_path():
-    print("You try to communicate with gestures. The villager looks confused but seems to understand you want to say"
-          "something, and they motion for you to follow them. They lead you to the village elder. The elder listens to your"
-          "story and decides to help you. They give you a map with an X marking a spot deep in the nearby forest."
-          "You follow the map and after a few hours of searching you reach the spot marked on the map. You dig and find"
-          "a chest buried in the ground. Inside you find gold, jewels, a cape, and a red gemstone!\n"
-    )
-
-    inventory.append("Cape")
-    inventory.append("Red gemstone")
-
-    print("Congratulations! You have found the Treasure of Autumn!\n")
-    directionpath3A()
-
-
-def language_path():
     print(
-          "You attempt to speak their language, but you only manage to butcher a few words. The villagers look at you angrily\n"
-          "and call for others. Soon you are surrounded by hostile villagers; they attack and kidnap you. You are held\n"
-          "captive for weeks before you manage to escape, but you are left with nothing but the clothes on your back. You\n"
-          "eventually make your way back home dehydrated, starved, exhausted, and empty-handed. You give up.\n"
+        "You decide that going to the treehouse village might have a better chance of finding the treasure. You make your"
+        "way toward the village. As you get closer you see that the village is bustling with activity; people are going"
+        "about their daily lives. You approach one of the villagers; they look at you like they've seen an alien. How"
+        "should you talk to them?\n"
     )
 
-    StateCode.Lives -= 1
-    print("You have " + str(StateCode.Lives) + " lives left.\n")
-
-
-def gift_path():
-    print(
-        "You offer the villager a gift from your homeland. They look at the gift curiously, and after examining it they smile\n"
-          "and motion for you to follow them. They lead you to their hut, give you food and water, and you explain your\n"
-          "quest through gestures. They take you to the village elder, who decides to help you. The elder gives you a map with\n"
-          "an 'X' marking a spot deep in the nearby forest. You follow the map and after a few hours of searching you reach the\n"
-          "spot marked on the map. You dig and find a chest buried in the ground. Inside you find gold, jewels, a cape, and a\n"
-          "red gemstone!\n"
-    )
-
-    inventory.append("Cape")
-    inventory.append("Red gemstone")
-
-    print("Congratulations! You have found the Treasure of Autumn!\n")
-    directionpath3A()
-
-while True:
+    while True:
         choice = input(
             "1. Try to communicate with gestures\n"
             "2. Attempt to speak their language\n"
@@ -161,6 +123,51 @@ while True:
             break
         else:
             print("Invalid choice. Please try again.\n")
+
+
+def communication_path():
+    print(
+        "You try to communicate with gestures. The villager looks confused but seems to understand you want to say "
+        "something, and they motion for you to follow them. They lead you to the village elder. The elder listens to your "
+        "story and decides to help you. They give you a map with an X marking a spot deep in the nearby forest. "
+        "You follow the map and after a few hours of searching you reach the spot marked on the map. You dig and find "
+        "a chest buried in the ground. Inside you find gold, jewels, a cape, and a red gemstone!\n"
+    )
+
+    inventory.append("Cape")
+    inventory.append("Red gemstone")
+
+    print("Congratulations! You have found the Treasure of Autumn!\n")
+    directionpath3A()
+
+
+def language_path():
+    print(
+        "You attempt to speak their language, but you only manage to butcher a few words. The villagers look at you angrily\n"
+        "and call for others. Soon you are surrounded by hostile villagers; they attack and kidnap you. You are held\n"
+        "captive for weeks before you manage to escape, but you are left with nothing but the clothes on your back. You\n"
+        "eventually make your way back home dehydrated, starved, exhausted, and empty-handed. You give up.\n"
+    )
+
+    StateCode.Lives -= 1
+    print("You have " + str(StateCode.Lives) + " lives left.\n")
+
+
+def gift_path():
+    print(
+        "You offer the villager a gift from your homeland. They look at the gift curiously, and after examining it they smile\n"
+        "and motion for you to follow them. They lead you to their hut, give you food and water, and you explain your\n"
+        "quest through gestures. They take you to the village elder, who decides to help you. The elder gives you a map with\n"
+        "an 'X' marking a spot deep in the nearby forest. You follow the map and after a few hours of searching you reach the\n"
+        "spot marked on the map. You dig and find a chest buried in the ground. Inside you find gold, jewels, a cape, and a\n"
+        "red gemstone!\n"
+    )
+
+    inventory.append("Cape")
+    inventory.append("Red gemstone")
+
+    print("Congratulations! You have found the Treasure of Autumn!\n")
+    directionpath3A()
 
 
 def directionpath3A():
