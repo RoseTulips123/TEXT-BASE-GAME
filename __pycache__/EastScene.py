@@ -15,12 +15,14 @@ def forest_path():
          print("walk deeper into the forest you see a clearing ahead, in the middle of the clearing you see an injured rare fox")
          print("thats colored gold and red, do you help the fox, ignore it or take its fur for profit\n")
 
+if choice_path3 == "12":
+           forest_path()
 
 choicepath4 = input("14. Help the fox" \
                     "15. Ignore the fox" \
                     "16. Take its fur for profit\n")
           
-if choicepath4 == "14":
+def help_fox():
          print("You carefully approach the injured fox, it looks at you with pleading eyes, you reach into you bag to find some")
          print("bandages and medicine, luckily you packed extra supplies for your journey, you carefully bandage the fox's wounds")
          print("and give it some water, after a few minutes the fox gets up and  hands you what it looks like a small map, the")
@@ -33,7 +35,7 @@ if choicepath4 == "14":
          print("Congratulations! You have found the Treasure of Autumn!\n")
         
 
-if choicepath4 == "15":
+def ignore_fox():
          print("You decide to ignore the fox and continue on your way, as you walk deeper into the forest, suddenly an tribe of")
          print("hostile natives ambush you, they overpower you and take all your supplies, leaving you stranded in the forest with")
          print("no food or water, after days of wandering you give up hope and succumb to starvation.\n")
@@ -42,7 +44,7 @@ if choicepath4 == "15":
          choicepath4()
          
 
-if choicepath4 == "16":
+def take_fur():
          print("You see the foxes fur would be worth a ton of gold, you quickly grab your knife and skin the fox, you put the fur")
          print("in your bag and turn back towards the path, as you walk back, a gigantic tree falls beside you, and before you")
          print("could run, it crushes you.\n")
@@ -50,11 +52,22 @@ if choicepath4 == "16":
          print("You have " + str(StateCode.Lives) + " lives left.\n")
          choicepath4()
 
+if choicepath4 == "14":
+         help_fox()
+elif choicepath4 == "15":
+         ignore_fox()
+elif choicepath4 == "16":
+         take_fur()
+else:
+        print("Invalid choice. Please try again.")
+        choicepath4()
+
 def treehouse_path():  
          print("You decide that going to the treehouse village might have a better chance of finding the treasure, you make your")
          print("way towards the village, as you get closer you see that the village is bustling with activity, people are going")
          print("about their daily lives, you approach one of the villagers, they look at you like they've seen an alien, how ")
          print("should you talk to them?\n")
+         treehouse_path
          choice = input("17. Try to communicate with gestures\n"  
                        "18. Attempt to speak their language\n" 
                        "19. Offer them a gift from your homeland\n")
@@ -86,9 +99,9 @@ def language_path():
                "and calls for others, soon you are surrounded by hostile villagers, they attack and kidnap you, you are held\n" 
                "captive for weeks before you manage to escape, but you are left with nothing but the clothes on your back, you\n"
                "eventually make your way back home dehydrated, starved, exhausted, and empty handed, you give up.\n")
-StateCode.Lives -= 1
-print("You have " + str(StateCode.Lives) + " lives left.\n")
-choice_path3()
+         StateCode.Lives -= 1
+         print("You have " + str(StateCode.Lives) + " lives left.\n")
+         east()
 
 def gift_path():
          print("You offer the villager a gift from your homeland, they look at the gift curiously, after examining it they smile\n"
@@ -101,20 +114,19 @@ def gift_path():
          inventory.append("Cape")
          inventory.append("Yellow gemstone")
 
-east()
+def directionpath3A():
+ choice = input("What direction should you go to next? \n"
+               "20. South (Treasure of Spring)\n"
+               "21. West  (Treasure of Summer)\n")      
 
-directionpath3A = input("What direction should you go to next? \n"
-                        "20. South (Treasure of Spring)\n"
-                        "21. West  (Treasure of Summer)\n")
-       
-if directionpath3A == "20":
-        print("You set sail to the South!\n")
-        from SouthScene import south
-        south()        
-elif directionpath3A == "21": 
-        print ("You sail to the West!")  
-        from WestScene import west
-        west()       
-else:
-        print("Invalid choice. Please try again.")
-        directionpath3A()
+ if choice == "20":
+                  print("You set sail to the South!\n")
+                  from SouthScene import south
+                  south()        
+ elif choice == "21": 
+                  print ("You sail to the West!")  
+                  from WestScene import west
+                  west()       
+ else:
+         print("Invalid choice. Please try again.")
+         directionpath3A()

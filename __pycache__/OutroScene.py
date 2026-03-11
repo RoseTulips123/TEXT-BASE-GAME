@@ -9,7 +9,7 @@ def outro():
              " know your grandma will be angry that you touched her vase, still you are happy with the outcome you got from it. But there are still some questions"
              " thats weighing on your mind, what are these gemsstones? What do they do? Why are they directly North, West, South, and East of your home? (ETC)"
              " You guess you'll find that out in your next adventure!")
-       ("Here is your final inventory and stats:\n")
+       print("Here is your final inventory and stats:\n")
        print("Inventory:", inventory)
        print("Lives:", StateCode.Lives)
        print("Health:", StateCode.Health)
