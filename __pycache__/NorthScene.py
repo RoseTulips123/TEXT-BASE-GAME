@@ -49,8 +49,9 @@ def north():
 
 def meat_scene():
     print(
-        "You go to pick up the meat, as you do a huge polar bear jumps out from the shadows and attacks you, you try"
-        "to fight it off but you end up with scratches and bruises, yet you live to see another day.\n"
+        "You go to pick up the meat, as you do a huge polar bear jumps out from the shadows and attacks" \
+        "you, you try to fight it off but you end up with scratches and bruises, yet you live to see another"
+        " day.\n"
     )
     StateCode.Health -= 50
     print("You have " + str(StateCode.Health) + " health left.\n")
@@ -58,21 +59,20 @@ def meat_scene():
 
 def ignore_scene():
     print(
-        "You ignore the meat and walk deeper into the cave, after a few minutes you see a light in the distance, you"
-        "walk towards it and find a large chamber with the floor frozen over, you see a large ice pedestal in the center"
-    )
-    print(
-        "of the chamber with a chest on top of it, should you cross the frozen floor to get to the chest? Or look around"
+        "You ignore the meat and walk deeper into the cave, after a few minutes you see a light in the distance," \
+        "you walk towards it and find a large chamber with the floor frozen over, you see a large ice pedestal in" \
+        "the center of the chamber with a chest on top of it, should you cross the frozen floor to get to the" \
+        "chest? Or look around"
     )
     print("the chamber first?\n")
 
 
 def frozenfloor_scene():
     print(
-        "You make your way across the frozen floor, as you near the pedestal you hear a cracking sound, before you can"
-        "react the ice breaks beneath you, and you fall into freezing water below, the freezing temperature of the water"
-        "gives you hypothermia and you drown.\n"
-        )
+        "You make your way across the frozen floor, as you near the pedestal you hear a cracking sound, before" \
+        "you can react the ice breaks beneath you, and you fall into freezing water below, the freezing temperature" \
+        "of the water gives you hypothermia and you drown.\n"
+   )
 
     StateCode.Lives -= 1
     print("You have " + str(StateCode.Lives) + " lives left.\n")
@@ -82,10 +82,10 @@ def frozenfloor_scene():
 
 def lookaround_scene():
     print(
-        "You observe the ice closely and see that the floor is very thin in some spots, you carefully make your way across"
-        "the chamber avoiding the thin ice, you reach the pedestal and open the chest, inside you find gold, diamonds,"
-        "a shield, and a Blue gemstone!\n"
-        )
+        "You observe the ice closely and see that the floor is very thin in some spots, you carefully make your" \
+        "way across the chamber avoiding the thin ice, you reach the pedestal and open the chest, inside you find" \
+        "gold, diamonds, a shield, and a Blue gemstone!\n"
+   )
 
     inventory.append("Shield")
     inventory.append("Blue gemstone")

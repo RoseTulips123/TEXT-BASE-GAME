@@ -1,3 +1,4 @@
+
 def introA():
     print("⚔︎ Treasure Quest ⚔︎\n")
     print(
@@ -12,9 +13,8 @@ def introA():
     "Type in the number to the choice you want to make.\n"
 )
 
-
 def chosen_direction():
-    return input(
+ (
         "What direction should you go first?\n"
         "1. North (Treasure of Winter)\n"
         "2. East  (Treasure of Autumn)\n"
@@ -43,6 +43,6 @@ elif choice == "4":
 else:
       print("Invalid choice. Please try again.\n")
 
-
-
+introA()
+chosen_direction()
 
