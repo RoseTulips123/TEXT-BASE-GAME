@@ -1,5 +1,8 @@
 
 
+from secrets import choice
+
+
 Lives = 3
 Health = 100
 
@@ -31,6 +34,10 @@ def Lose_HP(Current_HP, Current_Lives, Amount, Max_HP):
 
 def checkWinOrContinue():
     inventory = []
+    import random
+    
+    choice = random.choice(["1", "2", "3", "4"])
+
     if "Blue gemstone" in inventory and "Green gemstone" in inventory and "Red gemstone" in inventory and "Pink gemstone" in inventory:
          from OutroScene import outro
          outro()
@@ -38,3 +45,22 @@ def checkWinOrContinue():
     elif "Blue gemstone" not in inventory and "Green gemstone" not in inventory and "Red gemstone" not in inventory and "Pink gemstone" not in inventory:
          from MainIntro import chosen_direction
          chosen_direction()
+
+    if choice == "1":
+        print("You set sail to the North!\n")
+        from NorthScene import north
+        north()
+    elif choice == "2":
+        print("You set sail to the East!\n")
+        from EastScene import east
+        east()
+    elif choice == "3":
+        print("You set sail to the South!\n")
+        from SouthScene import south
+        south()
+    elif choice == "4":
+        print("You set sail to the West!\n")
+        from WestScene import west
+        west()
+    else:
+        print("Invalid choice. Please try again.\n")

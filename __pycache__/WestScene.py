@@ -25,7 +25,7 @@ def west():
 
     while True:
         choice = input(
-            "1. Gold from previous treasures\n"
+            "\n1. Gold from previous treasures\n"
             "2. Your compass\n"
             "3. Your weapons\n"
         ).strip()
@@ -55,7 +55,7 @@ def gold_path():
 
     while True:
         choice = input(
-            "1. A camel\n"
+            "\n1. A camel\n"
             "2. A desert well\n"
             "3. A sundial\n"
         ).strip()
@@ -81,6 +81,7 @@ def camel_path():
 
     StateCode.Health -= 25
     print("You have " + str(StateCode.Health) + " health left.\n")
+    _check_game_over()
 
     sundial_path()
 
@@ -100,13 +101,13 @@ def desertwell_path():
 
 def sundial_path():
     print(
-        "A secret door opens. You enter and are met with a straight path leading directly to another door. You feel suspicious "
+        "Suddenly a secret door opens. You enter and are met with a straight path leading directly to another door. You feel suspicious "
         "of this. Do you walk straight to the door, or investigate first?\n"
     )
 
     while True:
         choice = input(
-            "1. Walk straight to the door\n"
+            "\n1. Walk straight to the door\n"
             "2. Investigate\n"
         ).strip()
 
@@ -131,7 +132,7 @@ def dumb_path():
     print("You have " + str(StateCode.Lives) + " lives left.\n")
     _check_game_over()
 
-    smart_path()
+    sundial_path()
 
 
 def smart_path():
@@ -145,7 +146,7 @@ def smart_path():
 
     while True:
         choice = input(
-            "1. The shell\n"
+            "\n1. The shell\n"
             "2. The egg\n"
             "3. The yolk\n"
         ).strip()
@@ -171,6 +172,7 @@ def shell_path():
 
     StateCode.Health -= 25
     print("You have " + str(StateCode.Health) + " health left.\n")
+    _check_game_over()
 
     yolk_path()
 
@@ -196,6 +198,7 @@ def yolk_path():
 
     inventory.append("Sword")
     inventory.append("Red gemstone")
+    StateCode.checkWinOrContinue()
 
 
 def compass_path():
@@ -208,7 +211,25 @@ def compass_path():
     )
 
     print("You have failed your quest.\n")
+    StateCode.Lives -= 1
+    print("You have " + str(StateCode.Lives) + " lives left.\n")
+    _check_game_over()
 
+    west()
+
+
+def WorsecCamel_path():
+    print(
+        "Suddenly, a bunch of camels came out of a compartment and attacks you, but you gave all your weapons to the arab wonderers, you have no" \
+        " defence for yourself, you die from camels\n"
+        "You have failed your quest."
+    )
+    StateCode.Lives -= 1
+    print("You have " + str(StateCode.Lives) + " lives left.\n")
+    _check_game_over()
+
+    weapons_path()
+    
 
 def weapons_path():
     print(
@@ -220,5 +241,24 @@ def weapons_path():
         "and then come up with the answer.\n"
     )
 
-    gold_path()
+    while True:
+        choice = input(
+            "\n1. A camel\n"
+            "2. A desert well\n"
+            "3. A sundial\n"
+        ).strip()
+
+        if choice == "1":
+            WorsecCamel_path()
+            break
+        elif choice == "2":
+            desertwell_path()
+            break
+        elif choice == "3":
+            sundial_path()
+            break
+        else:
+            print("Invalid choice. Please try again.\n")
+
+
 

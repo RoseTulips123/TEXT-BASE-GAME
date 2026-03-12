@@ -17,7 +17,7 @@ def east():
 
     while True:
         choice = input(
-            "Which path do you take?\n"
+            "\nWhich path do you take?\n"
             "1. Beautiful forest\n"
             "2. Treehouse village\n"
         ).strip()
@@ -41,7 +41,7 @@ def forest_path():
 
     while True:
         choice = input(
-            "1. Help the fox\n"
+            "\n1. Help the fox\n"
             "2. Ignore the fox\n"
             "3. Take its fur for profit\n"
         ).strip()
@@ -114,7 +114,7 @@ def treehouse_path():
 
     while True:
         choice = input(
-            "1. Try to communicate with gestures\n"
+            "\n1. Try to communicate with gestures\n"
             "2. Attempt to speak their language\n"
             "3. Offer them a gift from your homeland\n"
         ).strip()
@@ -159,6 +159,9 @@ def language_path():
     StateCode.Lives -= 1
     print("You have " + str(StateCode.Lives) + " lives left.\n")
     _check_game_over()
+
+    treehouse_path()
+    
 
 def gift_path():
     print(

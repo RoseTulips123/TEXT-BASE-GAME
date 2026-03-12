@@ -20,7 +20,7 @@ def north():
 
     while True:
         choice = input(
-            "Do you eat the meat?\n"
+            "\nDo you eat the meat?\n"
             "1. Eat the meat\n"
             "2. Move on into the cave\n"
         ).strip()
@@ -37,7 +37,7 @@ def north():
    
     while True:
         choice = input(
-            "1. Cross the frozen floor to the chest\n"
+            "1. \nCross the frozen floor to the chest\n"
             "2. Look around the chamber first\n"
         ).strip()
 
@@ -65,6 +65,9 @@ def meat_scene():
     StateCode.Health -= 50
     print("You have " + str(StateCode.Health) + " health left.\n")
     _check_game_over()
+
+    north()
+    
 
 def ignore_scene():
         print(

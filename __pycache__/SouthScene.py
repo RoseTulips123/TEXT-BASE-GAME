@@ -22,7 +22,7 @@ def south():
 
     while True:
         choice = input(
-            "1. Investigate the noises\n"
+            "1. \nInvestigate the noises\n"
             "2. Stay in your shelter\n"
         ).strip()
 
@@ -66,7 +66,7 @@ def stay_path():
 
     while True:
         choice = input(
-            "1. Enter the cave\n"
+            "1. \nEnter the cave\n"
             "2. Rest by the waterfall\n"
         ).strip()
 
@@ -90,7 +90,7 @@ def cave_path():
 
     while True:
         choice = input(
-            "1. Hammer\n"
+            "1. \nHammer\n"
             "2. Chisel\n"
             "3. Pickaxe\n"
         ).strip()
@@ -137,6 +137,8 @@ def hammer_path():
     print("You have " + str(StateCode.Health) + " health left.\n")
     _check_game_over()
 
+    cave_path()
+
 
 def pickaxe_path():
     print(
@@ -147,6 +149,8 @@ def pickaxe_path():
     StateCode.Lives -= 1
     print("You have " + str(StateCode.Lives) + " lives left.\n")
     _check_game_over()
+
+    cave_path()
 
 
 def chisel_path():
@@ -161,7 +165,7 @@ def chisel_path():
 
     while True:
         choice = input(
-            "1. Left path\n"
+            "1. \nLeft path\n"
             "2. Middle path\n"
             "3. Right path\n"
         ).strip()
@@ -189,6 +193,8 @@ def left_path():
     print("You have " + str(StateCode.Health) + " health left.\n")
     _check_game_over()
 
+    chisel_path()
+
 
 def middle_path():
     print(
@@ -198,7 +204,7 @@ def middle_path():
 
     while True:
         choice = input(
-            "1. Pull the lever\n"
+            "\n1. Pull the lever\n"
             "2. Go back\n"
         ).strip()
 
@@ -219,6 +225,8 @@ def lever_path():
     StateCode.Lives -= 1
     print("You have " + str(StateCode.Lives) + " lives left.\n")
     _check_game_over()
+
+    chisel_path()
 
 
 def right_path():
