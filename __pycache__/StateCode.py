@@ -28,12 +28,18 @@ def Lose_HP(Current_HP, Current_Lives, Amount, Max_HP):
     return Current_HP, Current_Lives, False
 
 
-# Added a function to check if the player has won or not
+# Function to check if the player has collected all 4 gemstones
+def has_all_gems():
+    required = {"Blue gemstone", "Green gemstone", "Red gemstone", "Pink gemstone"}
+    found = {item.strip().lower() for item in inventory}
+    return required.issubset(found)
+
+# Function to check if the player has won or not
 def checkWinOrContinue():
     global inventory
     from MainIntro import chosen_direction
 
-    if all(g in inventory for g in ("Blue gemstone", "Green gemstone", "Red gemstone", "Pink gemstone")):
+    if has_all_gems():
         from OutroScene import outro
         outro()
         return
