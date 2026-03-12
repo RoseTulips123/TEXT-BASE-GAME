@@ -6,14 +6,11 @@ inventory = []
 
 
 def _check_game_over():
-    """Exit the game if the player has no lives remaining."""
     if StateCode.Game_over(StateCode.Lives):
         sys.exit()
 
 
 def west():
-    """Entry point for the West scene."""
-
     print(
         "You decide that your final adventure will be the western island, located directly west of your home. After days of "
         "sailing you reach the island. You dock your ship and step onto the sandy desert. You see nothing but sand dunes and "
@@ -225,7 +222,11 @@ def weapons_path():
 
     gold_path()
 
+if "Blue gemstone" in inventory and "Green gemstone" in inventory and "Red gemstone" in inventory and "Pink gemstone" in inventory:
+ from OutroScene import outro
+ outro()
 
-
-
-
+elif "Blue gemstone" not in inventory and "Green gemstone" not in inventory and "Red gemstone" not in inventory and "Pink gemstone" not in inventory:
+ from NorthScene import directionpath1
+ directionpath1()
+ 

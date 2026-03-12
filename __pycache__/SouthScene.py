@@ -236,29 +236,16 @@ def right_path():
     inventory.append("Pink gemstone")
 
     print("Congratulations! You have found the Treasure of Spring!\n")
-    final_choice()
+    
+    if "Blue gemstone" in inventory and "Green gemstone" in inventory and "Red gemstone" in inventory and "Pink gemstone" in inventory:
+     from OutroScene import outro
+     outro()
+
+    elif "Blue gemstone" not in inventory and "Green gemstone" not in inventory and "Red gemstone" not in inventory and "Pink gemstone" not in inventory:
+     from NorthScene import directionpath1
+     directionpath1()
 
 
-def final_choice():
-    print("Would you like to go to the final direction?")
-
-    while True:
-        choice = input(
-            "33. Yes\n"
-            "34. No\n"
-        ).strip()
-
-        if choice == "33":
-            from WestScene import west
-
-            west()
-            break
-        elif choice == "34":
-            print("Really? After all this work you don't want to finish your quest? Oh well, home you go.")
-            print("You have failed your quest.\n")
-            sys.exit()
-        else:
-            print("Invalid choice. Please try again.\n")
 
 
 

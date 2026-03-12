@@ -61,11 +61,11 @@ def help_fox():
           "and give it some water. After a few minutes the fox gets up and hands you what looks like a small map."
           "The fox then runs off into the forest. You look at the map and see that it shows an X marking a spot deeper in"
           "the forest. You decide to follow the map, and after a few hours of searching you reach the spot marked on the map."
-          "You dig and find a chest buried in the ground. Inside you find gold, jewels, a cape, and a yellow gemstone!\n"
+          "You dig and find a chest buried in the ground. Inside you find gold, jewels, a cape, and a green gemstone!\n"
     )
 
     inventory.append("Cape")
-    inventory.append("Yellow gemstone")
+    inventory.append("Green gemstone")
 
     print("Congratulations! You have found the Treasure of Autumn!\n")
     directionpath3A()
@@ -131,11 +131,11 @@ def communication_path():
         "something, and they motion for you to follow them. They lead you to the village elder. The elder listens to your "
         "story and decides to help you. They give you a map with an X marking a spot deep in the nearby forest. "
         "You follow the map and after a few hours of searching you reach the spot marked on the map. You dig and find "
-        "a chest buried in the ground. Inside you find gold, jewels, a cape, and a red gemstone!\n"
+        "a chest buried in the ground. Inside you find gold, jewels, a cape, and a green gemstone!\n"
     )
 
     inventory.append("Cape")
-    inventory.append("Red gemstone")
+    inventory.append("Green gemstone")
 
     print("Congratulations! You have found the Treasure of Autumn!\n")
     directionpath3A()
@@ -160,31 +160,19 @@ def gift_path():
         "quest through gestures. They take you to the village elder, who decides to help you. The elder gives you a map with\n"
         "an 'X' marking a spot deep in the nearby forest. You follow the map and after a few hours of searching you reach the\n"
         "spot marked on the map. You dig and find a chest buried in the ground. Inside you find gold, jewels, a cape, and a\n"
-        "red gemstone!\n"
+        "green gemstone!\n"
     )
 
     inventory.append("Cape")
-    inventory.append("Red gemstone")
+    inventory.append("Green gemstone")
 
     print("Congratulations! You have found the Treasure of Autumn!\n")
-    directionpath3A()
+    
+    if "Blue gemstone" in inventory and "Green gemstone" in inventory and "Red gemstone" in inventory and "Pink gemstone" in inventory:
+     from OutroScene import outro
+     outro()
 
+    elif "Blue gemstone" not in inventory and "Green gemstone" not in inventory and "Red gemstone" not in inventory and "Pink gemstone" not in inventory:
+     from NorthScene import directionpath1
+     directionpath1()
 
-def directionpath3A():
-    choice = input(
-        "What direction should you go to next? \n"
-        "1. South (Treasure of Spring)\n"
-        "2. West  (Treasure of Summer)\n"
-    ).strip()
-
-    if choice == "1":
-        print("You set sail to the South!\n")
-        from SouthScene import south
-        south()
-    elif choice == "2":
-        print("You sail to the West!\n")
-        from WestScene import west
-        west()
-    else:
-        print("Invalid choice. Please try again.\n")
-        directionpath3A()

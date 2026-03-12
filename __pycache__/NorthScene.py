@@ -127,4 +127,11 @@ def directionpath1():
         else:
             print("Invalid choice. Please try again.\n")
 
-north()
+        if "Blue gemstone" in inventory and "Green gemstone" in inventory and "Red gemstone" in inventory and "Pink gemstone" in inventory:
+         from OutroScene import outro
+         outro()
+
+        elif "Blue gemstone" not in inventory and "Green gemstone" not in inventory and "Red gemstone" not in inventory and "Pink gemstone" not in inventory:
+         directionpath1()
+
+north()    
