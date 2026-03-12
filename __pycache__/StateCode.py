@@ -1,6 +1,3 @@
-from secrets import choice
-
-
 Lives = 3
 Health = 100
 inventory = []  # keep collected gemstones between calls
@@ -30,7 +27,7 @@ def Lose_HP(Current_HP, Current_Lives, Amount, Max_HP):
 
 # Function to check if the player has collected all 4 gemstones
 def has_all_gems():
-    required = {"Blue gemstone", "Green gemstone", "Red gemstone", "Pink gemstone"}
+    required = {"blue gemstone", "green gemstone", "red gemstone", "pink gemstone"}
     found = {item.strip().lower() for item in inventory}
     return required.issubset(found)
 
