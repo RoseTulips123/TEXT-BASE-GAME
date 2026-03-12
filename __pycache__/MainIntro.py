@@ -14,7 +14,7 @@ def introA():
 )
 def chosen_direction():
     return input(
-        "What direction should you go first?\n"
+        "What direction should you go?\n"
         "1. North (Treasure of Winter)\n"
         "2. East  (Treasure of Autumn)\n"
         "3. South (Treasure of Spring)\n"

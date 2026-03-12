@@ -25,18 +25,18 @@ def west():
 
     while True:
         choice = input(
-            "35. Gold from previous treasures\n"
-            "36. Your compass\n"
-            "37. Your weapons\n"
+            "1. Gold from previous treasures\n"
+            "2. Your compass\n"
+            "3. Your weapons\n"
         ).strip()
 
-        if choice == "35":
+        if choice == "1":
             gold_path()
             break
-        elif choice == "36":
+        elif choice == "2":
             compass_path()
             break
-        elif choice == "37":
+        elif choice == "3":
             weapons_path()
             break
         else:
@@ -55,18 +55,18 @@ def gold_path():
 
     while True:
         choice = input(
-            "38. A camel\n"
-            "39. A desert well\n"
-            "40. A sundial\n"
+            "1. A camel\n"
+            "2. A desert well\n"
+            "3. A sundial\n"
         ).strip()
 
-        if choice == "38":
+        if choice == "1":
             camel_path()
             break
-        elif choice == "39":
+        elif choice == "2":
             desertwell_path()
             break
-        elif choice == "40":
+        elif choice == "3":
             sundial_path()
             break
         else:
@@ -106,14 +106,14 @@ def sundial_path():
 
     while True:
         choice = input(
-            "41. Walk straight to the door\n"
-            "42. Investigate\n"
+            "1. Walk straight to the door\n"
+            "2. Investigate\n"
         ).strip()
 
-        if choice == "41":
+        if choice == "1":
             dumb_path()
             break
-        elif choice == "42":
+        elif choice == "2":
             smart_path()
             break
         else:
@@ -145,18 +145,18 @@ def smart_path():
 
     while True:
         choice = input(
-            "43. The shell\n"
-            "44. The egg\n"
-            "45. The yolk\n"
+            "1. The shell\n"
+            "2. The egg\n"
+            "3. The yolk\n"
         ).strip()
 
-        if choice == "43":
+        if choice == "1":
             shell_path()
             break
-        elif choice == "44":
+        elif choice == "2":
             egg_path()
             break
-        elif choice == "45":
+        elif choice == "3":
             yolk_path()
             break
         else:

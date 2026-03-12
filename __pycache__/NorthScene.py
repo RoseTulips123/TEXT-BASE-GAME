@@ -21,15 +21,15 @@ def north():
     while True:
         choice = input(
             "Do you eat the meat?\n"
-            "5. Eat the meat\n"
-            "6. Move on into the cave\n"
+            "1. Eat the meat\n"
+            "2. Move on into the cave\n"
         ).strip()
 
-        if choice == "5":
+        if choice == "1":
             meat_scene()
             
             break
-        elif choice == "6":
+        elif choice == "2":
             ignore_scene()
             break
         else:
@@ -37,14 +37,14 @@ def north():
    
     while True:
         choice = input(
-            "7. Cross the frozen floor to the chest\n"
-            "8. Look around the chamber first\n"
+            "1. Cross the frozen floor to the chest\n"
+            "2. Look around the chamber first\n"
         ).strip()
 
-        if choice == "7":
+        if choice == "1":
             frozenfloor_scene()
             break
-        elif choice == "8":
+        elif choice == "2":
             lookaround_scene()
             break
         else:

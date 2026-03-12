@@ -22,14 +22,14 @@ def south():
 
     while True:
         choice = input(
-            "22. Investigate the noises\n"
-            "23. Stay in your shelter\n"
+            "1. Investigate the noises\n"
+            "2. Stay in your shelter\n"
         ).strip()
 
-        if choice == "22":
+        if choice ==   "1":
             investigate_path()
             break
-        elif choice == "23":
+        elif choice == "2":
             stay_path()
             break
         else:
@@ -66,14 +66,14 @@ def stay_path():
 
     while True:
         choice = input(
-            "24. Enter the cave\n"
-            "25. Rest by the waterfall\n"
+            "1. Enter the cave\n"
+            "2. Rest by the waterfall\n"
         ).strip()
 
-        if choice == "24":
+        if choice ==   "1":
             cave_path()
             break
-        elif choice == "25":
+        elif choice == "2":
             rest_path()
             break
         else:
@@ -90,18 +90,18 @@ def cave_path():
 
     while True:
         choice = input(
-            "26. Hammer\n"
-            "27. Chisel\n"
-            "28. Pickaxe\n"
+            "1. Hammer\n"
+            "2. Chisel\n"
+            "3. Pickaxe\n"
         ).strip()
 
-        if choice == "26":
+        if choice ==   "1":
             hammer_path()
             continue
-        elif choice == "27":
+        elif choice == "2":
             chisel_path()
             break
-        elif choice == "28":
+        elif choice == "3":
             pickaxe_path()
             continue
         else:
@@ -161,18 +161,18 @@ def chisel_path():
 
     while True:
         choice = input(
-            "29. Left path\n"
-            "30. Middle path\n"
-            "31. Right path\n"
+            "1. Left path\n"
+            "2. Middle path\n"
+            "3. Right path\n"
         ).strip()
 
-        if choice == "29":
+        if choice ==   "1":
             left_path()
             continue
-        elif choice == "30":
+        elif choice == "2":
             middle_path()
             continue
-        elif choice == "31":
+        elif choice == "3":
             right_path()
             break
         else:
@@ -198,14 +198,14 @@ def middle_path():
 
     while True:
         choice = input(
-            "32. Pull the lever\n"
-            "33. Go back\n"
+            "1. Pull the lever\n"
+            "2. Go back\n"
         ).strip()
 
-        if choice == "32":
+        if choice ==   "1":
             lever_path()
             break
-        elif choice == "33":
+        elif choice == "2":
             return
         else:
             print("Invalid choice. Please try again.\n")

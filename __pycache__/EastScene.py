@@ -7,8 +7,6 @@ inventory = []
 def _check_game_over():
     if StateCode.Game_over(StateCode.Lives):
         sys.exit()
-        _check_game_over()
-
 
 def east():
     print(
@@ -24,7 +22,7 @@ def east():
             "2. Treehouse village\n"
         ).strip()
 
-        if choice == "1":
+        if choice ==   "1":
             forest_path()
             break
         elif choice == "2":
@@ -48,7 +46,7 @@ def forest_path():
             "3. Take its fur for profit\n"
         ).strip()
 
-        if choice == "1":
+        if choice ==   "1":
             help_fox()
             break
         elif choice == "2":
@@ -88,6 +86,8 @@ def ignore_fox():
     StateCode.Lives -= 1
     print("You have " + str(StateCode.Lives) + " lives left.\n")
     _check_game_over()
+    
+    forest_path()
 
     
 def take_fur():
@@ -100,6 +100,9 @@ def take_fur():
     StateCode.Lives -= 1
     print("You have " + str(StateCode.Lives) + " lives left.\n")
     _check_game_over()
+
+    forest_path()
+
     
 def treehouse_path():
     print(
