@@ -222,11 +222,3 @@ def weapons_path():
 
     gold_path()
 
-if "Blue gemstone" in inventory and "Green gemstone" in inventory and "Red gemstone" in inventory and "Pink gemstone" in inventory:
- from OutroScene import outro
- outro()
-
-elif "Blue gemstone" not in inventory and "Green gemstone" not in inventory and "Red gemstone" not in inventory and "Pink gemstone" not in inventory:
- from NorthScene import directionpath1
- directionpath1()
- 

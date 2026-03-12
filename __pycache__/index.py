@@ -7,3 +7,11 @@ from EastScene import east
 from WestScene import west
 from OutroScene import outro
 from StateCode import State
+
+State()
+introA()
+north()
+south()
+east()
+west()
+outro()

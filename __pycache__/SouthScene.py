@@ -6,14 +6,11 @@ inventory = []
 
 
 def _check_game_over():
-    """Exit the game if the player has no lives remaining."""
     if StateCode.Game_over(StateCode.Lives):
         sys.exit()
 
 
 def south():
-    """Entry point for the South scene."""
-
     print(
         "You decide that your next adventure will be the southern island, located directly south of your home. After a few "
         "days of sailing you reach the island, you dock your ship and step onto the beautiful, sandy beach. You see palm trees "
@@ -51,7 +48,6 @@ def investigate_path():
     print("You have " + str(StateCode.Lives) + " lives left.\n")
     _check_game_over()
 
-    # Continue on after surviving the encounter
     stay_path()
 
 
@@ -236,17 +232,9 @@ def right_path():
     inventory.append("Pink gemstone")
 
     print("Congratulations! You have found the Treasure of Spring!\n")
-    
-    if "Blue gemstone" in inventory and "Green gemstone" in inventory and "Red gemstone" in inventory and "Pink gemstone" in inventory:
-     from OutroScene import outro
-     outro()
+    StateCode.checkWinOrContinue()
 
-    elif "Blue gemstone" not in inventory and "Green gemstone" not in inventory and "Red gemstone" not in inventory and "Pink gemstone" not in inventory:
-     from NorthScene import directionpath1
-     directionpath1()
-
-
-
+south()
 
 
                        

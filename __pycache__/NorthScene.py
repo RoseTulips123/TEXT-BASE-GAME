@@ -51,7 +51,7 @@ def north():
             print("Invalid choice. Please try again.\n")
 
     print("Congratulations! You have found the Treasure of Winter!\n")
-    directionpath1()
+    StateCode.checkWinOrContinue()
 
 
 def meat_scene():
@@ -95,43 +95,6 @@ def lookaround_scene():
 
     inventory.append("Shield")
     inventory.append("Blue gemstone")
-
-
-def directionpath1():
-    while True:
-        choice = input(
-            "What direction should you go to next?\n"
-            "9. East (Treasure of Autumn)\n"
-            "10. South (Treasure of Spring)\n"
-            "11. West (Treasure of Summer)\n"
-        ).strip()
-
-        if choice == "9":
-            print("You set sail to the East!\n")
-            from EastScene import east
-
-            east()
-            break
-        elif choice == "10":
-            print("You set sail to the South!\n")
-            from SouthScene import south
-
-            south()
-            break
-        elif choice == "11":
-            print("You set sail to the West!\n")
-            from WestScene import west
-
-            west()
-            break
-        else:
-            print("Invalid choice. Please try again.\n")
-
-        if "Blue gemstone" in inventory and "Green gemstone" in inventory and "Red gemstone" in inventory and "Pink gemstone" in inventory:
-         from OutroScene import outro
-         outro()
-
-        elif "Blue gemstone" not in inventory and "Green gemstone" not in inventory and "Red gemstone" not in inventory and "Pink gemstone" not in inventory:
-         directionpath1()
+    StateCode.checkWinOrContinue()
 
 north()    

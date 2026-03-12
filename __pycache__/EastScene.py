@@ -1,6 +1,13 @@
+import sys
+
 import StateCode
 
 inventory = []
+
+def _check_game_over():
+    if StateCode.Game_over(StateCode.Lives):
+        sys.exit()
+        _check_game_over()
 
 
 def east():
@@ -68,7 +75,7 @@ def help_fox():
     inventory.append("Green gemstone")
 
     print("Congratulations! You have found the Treasure of Autumn!\n")
-    directionpath3A()
+    StateCode.checkWinOrContinue()
 
 
 def ignore_fox():
@@ -80,10 +87,9 @@ def ignore_fox():
 
     StateCode.Lives -= 1
     print("You have " + str(StateCode.Lives) + " lives left.\n")
+    _check_game_over()
 
-    directionpath3A()
-
-
+    
 def take_fur():
     print(
           "You see the fox's fur would be worth a ton of gold. You quickly grab your knife and skin the fox, then put the fur"
@@ -93,10 +99,8 @@ def take_fur():
 
     StateCode.Lives -= 1
     print("You have " + str(StateCode.Lives) + " lives left.\n")
-
-    directionpath3A()
-
-
+    _check_game_over()
+    
 def treehouse_path():
     print(
         "You decide that going to the treehouse village might have a better chance of finding the treasure. You make your"
@@ -138,8 +142,8 @@ def communication_path():
     inventory.append("Green gemstone")
 
     print("Congratulations! You have found the Treasure of Autumn!\n")
-    directionpath3A()
-
+    StateCode.checkWinOrContinue()
+    
 
 def language_path():
     print(
@@ -151,7 +155,7 @@ def language_path():
 
     StateCode.Lives -= 1
     print("You have " + str(StateCode.Lives) + " lives left.\n")
-
+    _check_game_over()
 
 def gift_path():
     print(
@@ -167,12 +171,6 @@ def gift_path():
     inventory.append("Green gemstone")
 
     print("Congratulations! You have found the Treasure of Autumn!\n")
+    StateCode.checkWinOrContinue()
     
-    if "Blue gemstone" in inventory and "Green gemstone" in inventory and "Red gemstone" in inventory and "Pink gemstone" in inventory:
-     from OutroScene import outro
-     outro()
-
-    elif "Blue gemstone" not in inventory and "Green gemstone" not in inventory and "Red gemstone" not in inventory and "Pink gemstone" not in inventory:
-     from NorthScene import directionpath1
-     directionpath1()
-
+    
