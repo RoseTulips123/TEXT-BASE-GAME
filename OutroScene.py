@@ -15,6 +15,11 @@ def outro():
     print("Inventory:", StateCode.inventory)
     print("Lives:", StateCode.Lives)
     print("Health:", StateCode.Health)
+    print("\nSee you next time!\n")
+    print(" ⚔︎ Treasure Quest ⚔︎")
+    
+outro()
 
-    sys.exit()
+sys.exit()
+
 
