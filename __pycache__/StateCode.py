@@ -34,6 +34,7 @@ def has_all_gems():
     required = {"blue gemstone", "green gemstone", "red gemstone", "pink gemstone"}
     return required.issubset(set(inventory))
 
+# Check if player has won or not
 def checkWinOrContinue():
     global inventory
     from MainIntro import chosen_direction

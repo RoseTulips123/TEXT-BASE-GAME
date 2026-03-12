@@ -241,7 +241,4 @@ def right_path():
     StateCode.checkWinOrContinue()
 
     print("Congratulations! You have found the Treasure of Spring!\n")
-    
-south()
-
 

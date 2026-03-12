@@ -180,6 +180,4 @@ def gift_path():
     StateCode.checkWinOrContinue()
 
     print("Congratulations! You have found the Treasure of Autumn!\n")
-    
-    
-east()
+

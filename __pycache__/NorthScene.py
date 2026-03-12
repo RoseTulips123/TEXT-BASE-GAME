@@ -96,5 +96,3 @@ def lookaround_scene():
     inventory.append("Shield")
     StateCode.add_gem("Blue gemstone")
     StateCode.checkWinOrContinue()
-
-north()

@@ -259,4 +259,3 @@ def weapons_path():
             print("Invalid choice. Please try again.\n")
             weapons_path()  
 
-west()
