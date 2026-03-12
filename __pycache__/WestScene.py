@@ -197,7 +197,7 @@ def yolk_path():
     )
 
     inventory.append("Sword")
-    inventory.append("Red gemstone")
+    StateCode.add_gem("Red gemstone")
     StateCode.checkWinOrContinue()
 
 

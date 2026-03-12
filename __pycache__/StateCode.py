@@ -24,14 +24,16 @@ def Lose_HP(Current_HP, Current_Lives, Amount, Max_HP):
     print("HP:", Current_HP, "Lives:", Current_Lives, "\n")
     return Current_HP, Current_Lives, False
 
+# Inventory management functions
+def add_gem(gem_name: str):
+    normalized = gem_name.strip().lower()
+    if normalized not in inventory:
+        inventory.append(normalized)
 
-# Function to check if the player has collected all 4 gemstones
 def has_all_gems():
     required = {"blue gemstone", "green gemstone", "red gemstone", "pink gemstone"}
-    found = {item.strip().lower() for item in inventory}
-    return required.issubset(found)
+    return required.issubset(set(inventory))
 
-# Function to check if the player has won or not
 def checkWinOrContinue():
     global inventory
     from MainIntro import chosen_direction

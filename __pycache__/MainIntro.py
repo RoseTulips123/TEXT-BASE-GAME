@@ -1,4 +1,3 @@
-
 def introA():
     print("⚔︎ Treasure Quest ⚔︎\n")
     print(
@@ -12,6 +11,7 @@ def introA():
     "vase back then decide to set out on your quest to find the hidden treasures\n"
     "Type in the number to the choice you want to make.\n"
 )
+
 def chosen_direction():
     return input(
         "What direction should you go?\n"
@@ -21,32 +21,10 @@ def chosen_direction():
         "4. West  (Treasure of Summer)\n\n"
     ).strip()
 
-
-
 def main():
     introA()
-
-    choice = chosen_direction()
-
-    if choice == "1":
-        print("You set sail to the North!\n")
-        from NorthScene import north
-        north()
-    elif choice == "2":
-        print("You set sail to the East!\n")
-        from EastScene import east
-        east()
-    elif choice == "3":
-        print("You set sail to the South!\n")
-        from SouthScene import south
-        south()
-    elif choice == "4":
-        print("You set sail to the West!\n")
-        from WestScene import west
-        west()
-    else:
-        print("Invalid choice. Please try again.\n")
-
+    from StateCode import checkWinOrContinue
+    checkWinOrContinue()
 
 if __name__ == "__main__":
     main()

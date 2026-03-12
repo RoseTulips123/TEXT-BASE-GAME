@@ -237,12 +237,11 @@ def right_path():
     )
 
     inventory.append("Armor")
-    inventory.append("Pink gemstone")
-
-    print("Congratulations! You have found the Treasure of Spring!\n")
+    StateCode.add_gem("Pink gemstone")
     StateCode.checkWinOrContinue()
 
+    print("Congratulations! You have found the Treasure of Spring!\n")
+    
 south()
 
 
-                       

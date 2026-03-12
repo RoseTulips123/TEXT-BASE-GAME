@@ -50,9 +50,6 @@ def north():
         else:
             print("Invalid choice. Please try again.\n")
 
-    print("Congratulations! You have found the Treasure of Winter!\n")
-    StateCode.checkWinOrContinue()
-
 
 def meat_scene():
     print(
@@ -97,7 +94,7 @@ def lookaround_scene():
     )
 
     inventory.append("Shield")
-    inventory.append("Blue gemstone")
+    StateCode.add_gem("Blue gemstone")
     StateCode.checkWinOrContinue()
 
-north()    
+north()

@@ -70,10 +70,11 @@ def help_fox():
     )
 
     inventory.append("Cape")
-    inventory.append("Green gemstone")
+    StateCode.add_gem("Green gemstone")
+    StateCode.checkWinOrContinue()
 
     print("Congratulations! You have found the Treasure of Autumn!\n")
-    StateCode.checkWinOrContinue()
+    
 
 
 def ignore_fox():
@@ -142,10 +143,11 @@ def communication_path():
     )
 
     inventory.append("Cape")
-    inventory.append("Green gemstone")
+    StateCode.add_gem("Green gemstone")
+    StateCode.checkWinOrContinue()
 
     print("Congratulations! You have found the Treasure of Autumn!\n")
-    StateCode.checkWinOrContinue()
+    
     
 
 def language_path():
@@ -174,10 +176,10 @@ def gift_path():
     )
 
     inventory.append("Cape")
-    inventory.append("Green gemstone")
+    StateCode.add_gem("Green gemstone")
+    StateCode.checkWinOrContinue()
 
     print("Congratulations! You have found the Treasure of Autumn!\n")
-    StateCode.checkWinOrContinue()
+    
     
 east()
-    
