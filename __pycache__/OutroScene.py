@@ -13,3 +13,5 @@ def outro():
        print("Inventory:", inventory)
        print("Lives:", StateCode.Lives)
        print("Health:", StateCode.Health)
+
+outro()

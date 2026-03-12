@@ -11,7 +11,7 @@ def _check_game_over():
 
 def north():
     print(
-        "After days of sailing you reach an island directly north of your home. You dock your ship, and cold arctic "
+        "\nAfter days of sailing you reach an island directly north of your home. You dock your ship, and cold arctic "
         " winds hit your face. Good thing you prepared for this. You walk inland and see a huge mountain in the distance; "
         " after hours of hiking you reach the base of the mountain. You see a cave entrance and, after brushing snow off a "
         " fallen boulder, you notice a blue gemstone engraved in the rock. You enter the cave; it's dark and cold. You walk "
@@ -34,7 +34,7 @@ def north():
             break
         else:
             print("Invalid choice. Please try again.\n")
-   
+            north()
     while True:
         choice = input(
             "1. \nCross the frozen floor to the chest\n"
@@ -67,7 +67,7 @@ def meat_scene():
     _check_game_over()
 
     north()
-    
+
 
 def ignore_scene():
         print(

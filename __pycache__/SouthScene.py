@@ -34,7 +34,7 @@ def south():
             break
         else:
             print("Invalid choice. Please try again.\n")
-
+            south()
 
 def investigate_path():
     print(
@@ -48,7 +48,7 @@ def investigate_path():
     print("You have " + str(StateCode.Lives) + " lives left.\n")
     _check_game_over()
 
-    stay_path()
+    south()
 
 
 def stay_path():
@@ -78,7 +78,7 @@ def stay_path():
             break
         else:
             print("Invalid choice. Please try again.\n")
-
+            stay_path()
 
 def cave_path():
     print(
@@ -106,7 +106,7 @@ def cave_path():
             continue
         else:
             print("Invalid choice. Please try again.\n")
-
+            cave_path()
 
 def rest_path():
     print(
@@ -181,7 +181,7 @@ def chisel_path():
             break
         else:
             print("Invalid choice. Please try again.\n")
-
+            chisel_path()
 
 def left_path():
     print(
@@ -215,7 +215,7 @@ def middle_path():
             return
         else:
             print("Invalid choice. Please try again.\n")
-
+            middle_path()
 
 def lever_path():
     print(

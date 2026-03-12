@@ -30,7 +30,7 @@ def east():
             break
         else:
             print("Invalid choice. Please try again.\n")
-
+            east()
 
 def forest_path():
     print(
@@ -57,7 +57,7 @@ def forest_path():
             break
         else:
             print("Invalid choice, Please try again.\n")
-
+            forest_path()
 
 def help_fox():
     print(
@@ -130,7 +130,7 @@ def treehouse_path():
             break
         else:
             print("Invalid choice. Please try again.\n")
-
+            treehouse_path()
 
 def communication_path():
     print(
@@ -161,7 +161,7 @@ def language_path():
     _check_game_over()
 
     treehouse_path()
-    
+
 
 def gift_path():
     print(
@@ -179,4 +179,5 @@ def gift_path():
     print("Congratulations! You have found the Treasure of Autumn!\n")
     StateCode.checkWinOrContinue()
     
+east()
     

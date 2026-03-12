@@ -1,50 +1,44 @@
-
-
 from secrets import choice
 
 
 Lives = 3
 Health = 100
+inventory = []  # keep collected gemstones between calls
 
 def State():
-       global Lives
-       global Health
+    global Lives, Health
 
 def Game_over(Current_lives):
-       if Current_lives == 0:
-              print("You have failed your quest.\n")
-              return True
-       return False
+    if Current_lives == 0:
+        print("You have failed your quest.\n")
+        return True
+    return False
 
 def Lose_HP(Current_HP, Current_Lives, Amount, Max_HP):
-       Current_HP -= Amount
-       if Current_HP <= 0:
-              Current_Lives -= 1
-              Current_HP = Max_HP
-              print("You lost a Life! Please be more careful next time.\n")
-       
-       if Game_over(Current_Lives):
-              return Current_HP, Current_Lives, True
-         
-              print("HP:", Current_HP, "Lives:", Current_Lives, "\n")
-              return Current_HP, Current_Lives, False
-       
-       
-# Added a function to check if player colleccted all 4 gemstones or not.
+    Current_HP -= Amount
+    if Current_HP <= 0:
+        Current_Lives -= 1
+        Current_HP = Max_HP
+        print("You lost a Life! Please be more careful next time.\n")
 
+    if Game_over(Current_Lives):
+        return Current_HP, Current_Lives, True
+
+    print("HP:", Current_HP, "Lives:", Current_Lives, "\n")
+    return Current_HP, Current_Lives, False
+
+
+# Added a function to check if the player has won or not
 def checkWinOrContinue():
-    inventory = []
-    import random
-    
-    choice = random.choice(["1", "2", "3", "4"])
+    global inventory
+    from MainIntro import chosen_direction
 
-    if "Blue gemstone" in inventory and "Green gemstone" in inventory and "Red gemstone" in inventory and "Pink gemstone" in inventory:
-         from OutroScene import outro
-         outro()
+    if all(g in inventory for g in ("Blue gemstone", "Green gemstone", "Red gemstone", "Pink gemstone")):
+        from OutroScene import outro
+        outro()
+        return
 
-    elif "Blue gemstone" not in inventory and "Green gemstone" not in inventory and "Red gemstone" not in inventory and "Pink gemstone" not in inventory:
-         from MainIntro import chosen_direction
-         chosen_direction()
+    choice = chosen_direction()
 
     if choice == "1":
         print("You set sail to the North!\n")

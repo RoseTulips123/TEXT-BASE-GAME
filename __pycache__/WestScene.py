@@ -41,7 +41,7 @@ def west():
             break
         else:
             print("Invalid choice. Please try again.\n")
-
+            west()
 
 def gold_path():
     print(
@@ -71,7 +71,7 @@ def gold_path():
             break
         else:
             print("Invalid choice. Please try again.\n")
-
+            gold_path()
 
 def camel_path():
     print(
@@ -119,7 +119,7 @@ def sundial_path():
             break
         else:
             print("Invalid choice. Please try again.\n")
-
+            sundial_path()
 
 def dumb_path():
     print(
@@ -162,7 +162,7 @@ def smart_path():
             break
         else:
             print("Invalid choice. Please try again.\n")
-
+            smart_path()
 
 def shell_path():
     print(
@@ -215,8 +215,6 @@ def compass_path():
     print("You have " + str(StateCode.Lives) + " lives left.\n")
     _check_game_over()
 
-    west()
-
 
 def WorsecCamel_path():
     print(
@@ -259,6 +257,6 @@ def weapons_path():
             break
         else:
             print("Invalid choice. Please try again.\n")
+            weapons_path()  
 
-
-
+west()
