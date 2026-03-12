@@ -7,6 +7,8 @@ inventory = []
 def _check_game_over():
     if StateCode.Game_over(StateCode.Lives):
         sys.exit()
+    elif StateCode.Health <= 0:
+        sys.exit()
 
 
 def north():
@@ -96,3 +98,6 @@ def lookaround_scene():
     inventory.append("Shield")
     StateCode.add_gem("Blue gemstone")
     StateCode.checkWinOrContinue()
+
+
+

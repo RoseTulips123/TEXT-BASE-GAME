@@ -1,17 +1,18 @@
 inventory = []
 
 from MainIntro import introA
-from NorthScene import north
-from SouthScene import south
-from EastScene import east
-from WestScene import west
-from OutroScene import outro
-from StateCode import State
 
-State()
 introA()
+
+from MainIntro import chosen_direction
+
+chosen_direction()
+
+from MainIntro import main
+
+main()
+
+from NorthScene import north
+
 north()
-south()
-east()
-west()
-outro()
+

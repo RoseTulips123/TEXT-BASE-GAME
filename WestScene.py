@@ -8,6 +8,8 @@ inventory = []
 def _check_game_over():
     if StateCode.Game_over(StateCode.Lives):
         sys.exit()
+    elif StateCode.Health <= 0:
+        sys.exit()
 
 
 def west():

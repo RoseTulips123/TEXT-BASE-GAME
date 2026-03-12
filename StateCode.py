@@ -42,7 +42,7 @@ def checkWinOrContinue():
     if has_all_gems():
         from OutroScene import outro
         outro()
-        return
+        
 
     choice = chosen_direction()
 

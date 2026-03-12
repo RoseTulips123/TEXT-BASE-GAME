@@ -8,6 +8,8 @@ inventory = []
 def _check_game_over():
     if StateCode.Game_over(StateCode.Lives):
         sys.exit()
+    elif StateCode.Health <= 0:
+        sys.exit()
 
 
 def south():
@@ -241,4 +243,8 @@ def right_path():
     StateCode.checkWinOrContinue()
 
     print("Congratulations! You have found the Treasure of Spring!\n")
+
+    from StateCode import checkWinOrContinue
+
+    checkWinOrContinue()
 

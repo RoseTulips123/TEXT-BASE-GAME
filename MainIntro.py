@@ -21,13 +21,12 @@ def chosen_direction():
         "4. West  (Treasure of Summer)\n\n"
     ).strip()
 
-def main():
-    introA()
-    from StateCode import checkWinOrContinue
-    checkWinOrContinue()
 
-if __name__ == "__main__":
-    main()
+introA()
+from StateCode import checkWinOrContinue
+checkWinOrContinue()
+
+
 
 
 
