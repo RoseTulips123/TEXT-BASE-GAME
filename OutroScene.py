@@ -1,16 +1,20 @@
+import sys
 
 import StateCode
-from index import inventory
+
 
 def outro():
-       print("Congratulations! You found all 4 gemstone and a full set of armor! You have completed you quest.\n \n")
-       print("\"Now having found all 4 gemstones, you retire back to your homeland, on the way, you cant wait to tell everone about your adventure, but"
-             " know your grandma will be angry that you touched her vase, still you are happy with the outcome you got from it. But there are still some questions"
-             " thats weighing on your mind, what are these gemsstones? What do they do? Why are they directly North, West, South, and East of your home? (ETC)"
-             " You guess you'll find that out in your next adventure!")
-       print("Here is your final inventory and stats:\n")
-       print("Inventory:", inventory)
-       print("Lives:", StateCode.Lives)
-       print("Health:", StateCode.Health)
-       
-outro()
+    print("Congratulations! You found all 4 gemstones and a full set of armor! You have completed your quest.\n")
+    print(
+        "\"Now having found all 4 gemstones, you retire back to your homeland. On the way, you can't wait to tell everyone about your adventure, "
+        "but you know your grandma will be angry that you touched her vase. Still, you are happy with the outcome you got from it. "
+        "There are still some questions weighing on your mind: what are these gemstones? What do they do? Why are they directly North, West, South, and East of your home? (ETC)"
+        " You guess you'll find that out in your next adventure!"
+    )
+    print("\nHere is your final inventory and stats:\n")
+    print("Inventory:", StateCode.inventory)
+    print("Lives:", StateCode.Lives)
+    print("Health:", StateCode.Health)
+
+    sys.exit()
+

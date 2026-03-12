@@ -34,33 +34,43 @@ def has_all_gems():
     required = {"blue gemstone", "green gemstone", "red gemstone", "pink gemstone"}
     return required.issubset(set(inventory))
 
+import sys
+
 # Check if player has won or not
 def checkWinOrContinue():
-    global inventory
-    from MainIntro import chosen_direction
-
     if has_all_gems():
         from OutroScene import outro
         outro()
-        
+        sys.exit()
 
-    choice = chosen_direction()
+    while True:
+        choice = input(
+            "What direction should you go?\n"
+            "1. North (Treasure of Winter)\n"
+            "2. East  (Treasure of Autumn)\n"
+            "3. South (Treasure of Spring)\n"
+            "4. West  (Treasure of Summer)\n\n"
+        ).strip()
 
-    if choice == "1":
-        print("You set sail to the North!\n")
-        from NorthScene import north
-        north()
-    elif choice == "2":
-        print("You set sail to the East!\n")
-        from EastScene import east
-        east()
-    elif choice == "3":
-        print("You set sail to the South!\n")
-        from SouthScene import south
-        south()
-    elif choice == "4":
-        print("You set sail to the West!\n")
-        from WestScene import west
-        west()
-    else:
-        print("Invalid choice. Please try again.\n")
+        if choice == "1":
+            print("You set sail to the North!\n")
+            from NorthScene import north
+            north()
+            break
+        elif choice == "2":
+            print("You set sail to the East!\n")
+            from EastScene import east
+            east()
+            break
+        elif choice == "3":
+            print("You set sail to the South!\n")
+            from SouthScene import south
+            south()
+            break
+        elif choice == "4":
+            print("You set sail to the West!\n")
+            from WestScene import west
+            west()
+            break
+        else:
+            print("Invalid choice. Please try again.\n")
