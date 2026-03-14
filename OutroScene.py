@@ -17,8 +17,6 @@ def outro():
     print("Health:", StateCode.Health)
     print("\nSee you next time!\n")
     print(" ⚔︎ Treasure Quest ⚔︎")
-    
-outro()
 
 sys.exit()
 
