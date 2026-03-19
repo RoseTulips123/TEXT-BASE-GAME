@@ -18,6 +18,6 @@ def outro():
     print("\nSee you next time!\n")
     print(" ⚔︎ Treasure Quest ⚔︎")
 
-sys.exit()
+
 
 

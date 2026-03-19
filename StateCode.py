@@ -41,7 +41,7 @@ def checkWinOrContinue():
     if has_all_gems():
         from OutroScene import outro
         outro()
-        sys.exit()
+        
 
     while True:
         choice = input(
