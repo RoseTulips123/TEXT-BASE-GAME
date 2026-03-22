@@ -34,7 +34,7 @@ def has_all_gems():
     required = {"blue gemstone", "green gemstone", "red gemstone", "pink gemstone"}
     return required.issubset(set(inventory))
 
-import sys
+
 
 # Check if player has won or not
 def checkWinOrContinue():
